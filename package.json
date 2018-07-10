@@ -8,8 +8,8 @@
     "client-dev": "webpack --mode development --watch",
     "client-prod": "webpack --mode production",
     "start": "npm run client-prod $$ npm run server-prod",
-    "server-prod": "node ./server/index.js",
-    "server-dev": "nodemon server/index.js",
+    "server-prod": "./server/index.js",
+    "server-dev": "nodemon server/index.js --exec babel-node",
     "postinstall": "webpack",
     "heroku-postbuild": "webpack -p"
   },
