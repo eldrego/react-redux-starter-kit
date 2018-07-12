@@ -3,9 +3,9 @@ import { mount } from 'enzyme'; /*eslint-disable-line*/
 import * as Enzyme from 'enzyme'; /*eslint-disable-line*/
 import Adapter from 'enzyme-adapter-react-15';
 
-import Home from '../client/src/components/pages/Home';
-import About from '../client/src/components/pages/About';
-import NotFound from '../client/src/components/pages/NotFound';
+import Home from '../src/components/pages/Home';
+import About from '../src/components/pages/About';
+import NotFound from '../src/components/pages/NotFound';
 
 Enzyme.configure({ adapter: new Adapter() });
 

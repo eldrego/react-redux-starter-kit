@@ -26,6 +26,6 @@ app.use('/api/v1/', routes);
 
 app.server.listen(process.env.PORT || 8080);
 
-winston.info(`Started on port ${app.server.address().port}`, 'info');
+// winston.info(`Started on port ${app.server.address().port}`, 'info');
 
-export default app;
+module.exports = app;
