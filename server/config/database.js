@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 
-mongoose.connect('mongodb://localhost:27017/journal',
+require('dotenv').config();
+
+mongoose.connect(process.env.DB,
   { useNewUrlParser: true });
 const database = mongoose.connection;
 

@@ -7,14 +7,9 @@
     "test": "test",
     "server-test": "nyc --reporter=text _mocha server/test --require babel-register",
     "server-test-nyc-reporter": "nyc --reporter=text mocha",
-    "client-test": "jest --coverage && codecov",
-    "client-dev": "webpack --mode development --watch",
-    "client-prod": "webpack --mode production",
-    "start": "npm run client-prod $$ npm run server-prod",
-    "server-prod": "./server/index.js",
-    "server-dev": "nodemon server/index.js --exec babel-node",
-    "postinstall": "webpack",
-    "heroku-postbuild": "webpack -p"
+    "start": "npm run server-prod",
+    "server-prod": "server/index.js --exec babel-node",
+    "server-dev": "nodemon server/index.js --exec babel-node"
   },
   "jest": {
     "verbose": true,
@@ -27,6 +22,7 @@
     "babel-preset-es2015": "^6.24.1",
     "body-parser": "^1.17.2",
     "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
     "express": "^4.15.3",
     "mongoose": "^5.2.2",
     "prop-types": "^15.6.2",
