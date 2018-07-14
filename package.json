@@ -7,8 +7,11 @@
     "test": "test",
     "server-test": "nyc --reporter=text _mocha server/test --require babel-register",
     "server-test-nyc-reporter": "nyc --reporter=text mocha",
-    "start": "npm run server-prod",
-    "server-prod": "server/index.js --exec babel-node",
+    "start": "npm run server-start",
+    "server-start": "node ./build/index.js",
+    "clean": "rm -rf build && mkdir build",
+    "build-server": "babel -d ./build ./server -s",
+    "build": "npm run clean && npm run build-server",
     "server-dev": "nodemon server/index.js --exec babel-node"
   },
   "jest": {
@@ -37,7 +40,7 @@
     "winston": "^3.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "babel-core": "latest",
     "babel-eslint": "^8.2.5",
     "babel-jest": "^23.2.0",
     "babel-loader": "^7.1.5",
@@ -53,12 +56,11 @@
     "css-loader": "^1.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-15": "^1.0.6",
-    "eslint": "^5.1.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-react": "^7.10.0",
-    "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
     "istanbul": "^0.4.5",
     "jest": "^23.3.0",
