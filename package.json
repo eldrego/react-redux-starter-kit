@@ -54,6 +54,7 @@
     "chai-http": "^1.0.0",
     "clean-webpack-plugin": "^0.1.19",
     "codecov": "^3.0.4",
+    "coveralls": "^3.0.2",
     "css-loader": "^1.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-15": "^1.0.6",
