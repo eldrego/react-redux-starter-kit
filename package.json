@@ -9,9 +9,9 @@
     "server-test-nyc-reporter": "nyc --reporter=text mocha",
     "start": "npm run server-start",
     "server-start": "npm run build && node ./build/index.js",
+    "build": "npm run clean && npm run build-server",
     "clean": "rm -rf build && mkdir build",
     "build-server": "babel -d ./build ./server -s",
-    "build": "npm run clean && npm run build-server",
     "server-dev": "nodemon server/index.js --exec babel-node"
   },
   "jest": {
@@ -40,6 +40,7 @@
     "winston": "^3.0.0"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
     "babel-core": "latest",
     "babel-eslint": "^8.2.5",
     "babel-jest": "^23.2.0",
