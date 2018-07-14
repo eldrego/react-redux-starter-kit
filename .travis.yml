@@ -3,7 +3,6 @@ node_js:
   - "stable"
 
 script:
-  - "npm run client-test"
   - "npm run server-test"
-  
+
 after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
