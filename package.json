@@ -8,7 +8,7 @@
     "server-test": "nyc --reporter=text _mocha server/test --require babel-register",
     "server-test-nyc-reporter": "nyc --reporter=text mocha",
     "start": "npm run server-start",
-    "server-start": "node ./build/index.js",
+    "server-start": "npm run build && node ./build/index.js",
     "clean": "rm -rf build && mkdir build",
     "build-server": "babel -d ./build ./server -s",
     "build": "npm run clean && npm run build-server",
