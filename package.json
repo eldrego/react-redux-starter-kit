@@ -11,10 +11,9 @@
     "instrument": false
   },
   "scripts": {
-    "test": "npm run cover",
-    "nyctest": "cross-env NODE_ENV=test nyc --reporter=lcov _mocha server/test",
+    "test": "npm run server-test",
     "server-test": "npm run cover",
-    "nyc": "nyc --reporter=html --reporter=text npm run server-test",
+    "client-test": "jest --coverage",
     "start": "npm run server-prod",
     "server-prod": "npm run build && node ./build/index.js",
     "build": "npm run clean && npm run build-server",
