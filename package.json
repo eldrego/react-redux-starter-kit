@@ -3,9 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "nyc": {
+    "require": [
+      "babel-register"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  },
   "scripts": {
-    "test": "npm run nyc",
-    "server-test": "_mocha server/test --require babel-register",
+    "test": "npm run cover",
+    "nyctest": "cross-env NODE_ENV=test nyc --reporter=lcov _mocha server/test",
+    "server-test": "_mocha server/test --require babel-register --recursive --colors",
     "nyc": "nyc --reporter=html --reporter=text npm run server-test",
     "start": "npm run server-prod",
     "server-prod": "npm run build && node ./build/index.js",
@@ -13,7 +21,8 @@
     "clean": "rm -rf build && mkdir build",
     "build-server": "babel -d ./build ./server -s",
     "server-dev": "nodemon server/index.js --exec babel-node",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "cover": "babel-node ./node_modules/istanbul/lib/cli.js cover _mocha -- server/test --require babel-polyfill",
+    "open-cov": "open coverage/lcov-report/index.html"
   },
   "jest": {
     "verbose": true,
@@ -46,6 +55,7 @@
     "babel-eslint": "^8.2.5",
     "babel-jest": "^23.2.0",
     "babel-loader": "^7.1.5",
+    "babel-plugin-istanbul": "^4.1.6",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-latest": "^6.24.1",
@@ -56,6 +66,7 @@
     "clean-webpack-plugin": "^0.1.19",
     "codecov": "^3.0.4",
     "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-15": "^1.0.6",
@@ -65,13 +76,13 @@
     "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-react": "^7.10.0",
     "html-webpack-plugin": "^3.2.0",
-    "istanbul": "^0.4.5",
+    "istanbul": "^1.0.0-alpha",
     "jest": "^23.3.0",
     "mini-css-extract-plugin": "^0.4.1",
-    "mocha": "^2.5.3",
+    "mocha": "^3.5.3",
     "mocha-lcov-reporter": "^1.3.0",
     "node-sass": "^4.9.2",
-    "nyc": "^12.0.2",
+    "nyc": "^11.3.0",
     "react-test-renderer": "^15.5.4",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
