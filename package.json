@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "server-test": "nyc --reporter=text _mocha server/test --require babel-register",
-    "server-test-nyc-reporter": "nyc --reporter=text mocha",
-    "start": "npm run server-start",
-    "server-start": "npm run build && node ./build/index.js",
+    "test": "npm run nyc",
+    "server-test": "_mocha server/test --require babel-register",
+    "nyc": "nyc --reporter=html --reporter=text npm run server-test",
+    "start": "npm run server-prod",
+    "server-prod": "npm run build && node ./build/index.js",
     "build": "npm run clean && npm run build-server",
     "clean": "rm -rf build && mkdir build",
     "build-server": "babel -d ./build ./server -s",
-    "server-dev": "nodemon server/index.js --exec babel-node"
+    "server-dev": "nodemon server/index.js --exec babel-node",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "jest": {
     "verbose": true,
