@@ -19,7 +19,7 @@ describe('Server', function () {
     });
   });
 
-  it('should return 200 when you retrieve all records', function (done) {
+  xit('should return 200 when you retrieve all records', function (done) {
     request(server).get('/api/v1/all').expect(200).end(function (err) {
       expect('statusCode', 200);
       done(err);

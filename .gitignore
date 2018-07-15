@@ -61,6 +61,7 @@ typings/
 .next
 
 # Compiled directory and file
+build/
 build
 bundle.js
 client/dist
