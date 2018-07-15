@@ -8,7 +8,7 @@ services:
 script:
   - "npm run server-test"
 
-after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+after_script: "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
 
 after_success:
  - "npm run coverage"
