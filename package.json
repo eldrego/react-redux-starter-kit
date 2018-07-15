@@ -13,7 +13,7 @@
   "scripts": {
     "test": "npm run cover",
     "nyctest": "cross-env NODE_ENV=test nyc --reporter=lcov _mocha server/test",
-    "server-test": "_mocha server/test --require babel-register --recursive --colors",
+    "server-test": "npm run cover",
     "nyc": "nyc --reporter=html --reporter=text npm run server-test",
     "start": "npm run server-prod",
     "server-prod": "npm run build && node ./build/index.js",
