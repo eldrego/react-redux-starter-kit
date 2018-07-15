@@ -1,8 +1,0 @@
-"server-test": "nyc --reporter=text _mocha server/test --require babel-register",
-"server-test-nyc-reporter": "nyc --reporter=text mocha",
-"client-test": "jest --coverage && codecov",
-"client-dev": "webpack --mode development --watch",
-"client-prod": "webpack --mode production",
-"start": "npm run client-prod $$ npm run server-prod",
-"server-prod": "./server/index.js",
-"server-dev": "nodemon server/index.js --exec babel-node",
