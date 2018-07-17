@@ -11,10 +11,13 @@
     "instrument": false
   },
   "scripts": {
-    "test": "npm run server-test",
+    "test": "npm run server-test && npm run client-test",
     "server-test": "npm run cover",
     "client-test": "jest --coverage",
-    "start": "npm run server-prod",
+    "client-dev": "webpack --mode development --watch",
+    "client-prod": "webpack --mode production",
+    "start": "npm run server-prod && npm run client-prod",
+    "dev": "npm run server-dev && npm run client-dev",
     "server-prod": "npm run build && node ./build/index.js",
     "build": "npm run clean && npm run build-server",
     "clean": "rm -rf build && mkdir build",
