@@ -65,5 +65,6 @@ build/
 build
 bundle.js
 client/dist
+dist
 
 npm-scripts.txt
