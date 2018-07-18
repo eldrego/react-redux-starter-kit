@@ -1,6 +1,6 @@
 # React Redux Starter Kit
 
-[![Build Status](https://travis-ci.org/eldrego/react-redux-starter-kit.svg?branch=master)](https://travis-ci.org/eldrego/react-redux-starter-kit) [![Coverage Status](https://coveralls.io/repos/github/eldrego/react-redux-starter-kit/badge.svg?branch=master)](https://coveralls.io/github/eldrego/react-redux-starter-kit?branch=master) [![Maintainability](https://api.codeclimate.com/v1/badges/8ab5785ac91be8d1bf0d/maintainability)](https://codeclimate.com/github/eldrego/react-redux-starter-kit/maintainability) [![Hound](https://img.shields.io/badge/Protected_by-Hound-a873d1.svg)](https://travis-ci.org/eldrego/react-redux-starter-kit) [![codecov](https://codecov.io/gh/eldrego/react-redux-starter-kit/branch/master/graph/badge.svg)]
+[![Build Status](https://travis-ci.org/eldrego/react-redux-starter-kit.svg?branch=master)](https://travis-ci.org/eldrego/react-redux-starter-kit) [![Coverage Status](https://coveralls.io/repos/github/eldrego/react-redux-starter-kit/badge.svg?branch=master)](https://coveralls.io/github/eldrego/react-redux-starter-kit?branch=master) [![Maintainability](https://api.codeclimate.com/v1/badges/8ab5785ac91be8d1bf0d/maintainability)](https://codeclimate.com/github/eldrego/react-redux-starter-kit/maintainability) [![Hound](https://img.shields.io/badge/Protected_by-Hound-a873d1.svg)](https://travis-ci.org/eldrego/react-redux-starter-kit)
 
 This is repository is created to help bootstrap every React-Redux application with a Node-Express backend using MongoDB as it primary database.
 
@@ -37,9 +37,7 @@ While developing, leverage these additional scripts other than `npm start`;
 |`npm run <script>`|Description|
 |------------------|-----------|
 |`start`|Serves your app for production at `localhost:8080`.|
-|`dev`|Serves your app for development at `localhost:8080`. Watching files using Nodemon and Webpack watch.|
-|`build`|Compiles the application to disk (`~/dist` by default).|
-|`dev`|Same as `npm start`, but enables nodemon for the server and webpack watch for the client as well.|
+|`dev`|Serves your app for development at `localhost:8080`. Watching files using Nodemon and Webpack's watch.|
 |`test`|Runs unit tests with Jest, Mocha and generates a coverage report.|
 
 ## Project Structure
