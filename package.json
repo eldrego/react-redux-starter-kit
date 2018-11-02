@@ -11,7 +11,7 @@
     "instrument": false
   },
   "scripts": {
-    "test": "npm run client-test",
+    "test": "npm run client-test && npm run server-test",
     "server-test": "npm run client-prod && npm run cover",
     "client-test": "jest --coverage",
     "client-dev": "webpack --mode development --watch",
@@ -24,7 +24,7 @@
     "clean": "rm -rf build && mkdir build",
     "build-server": "babel -d ./build ./server -s",
     "server-dev": "NODE_DEBUG=server nodemon server/index.js --exec babel-node",
-    "cover": "babel-node ./node_modules/istanbul/lib/cli.js cover _mocha -- server/test --require babel-polyfill",
+    "cover": "babel-node ./node_modules/istanbul/lib/cli.js cover _mocha -- server/test --require babel-polyfill  --exit",
     "open-cov": "open coverage/lcov-report/index.html"
   },
   "jest": {
