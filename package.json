@@ -11,7 +11,7 @@
     "instrument": false
   },
   "scripts": {
-    "test": "npm run server-test && npm run client-test",
+    "test": "npm run client-test",
     "server-test": "npm run client-prod && npm run cover",
     "client-test": "jest --coverage",
     "client-dev": "webpack --mode development --watch",
