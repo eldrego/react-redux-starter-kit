@@ -1,8 +1,14 @@
 import React from 'react';
+import {
+  Route,
+  Switch
+} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Header from './common/Header';
 import Footer from './common/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
 
 
 const Layout = props => ({
@@ -10,7 +16,12 @@ const Layout = props => ({
     return (
       <div>
         <Header />
-        <main className="container">{props.children}</main>
+        <main className="container">
+          <Switch>
+            <Route path={`${props.match.path}/`} exact component={Home} />
+            <Route path={`${props.match.path}/about`} component={About} />
+          </Switch>
+        </main>
         <Footer />
       </div>
     );
@@ -18,7 +29,7 @@ const Layout = props => ({
 });
 
 Layout.propTypes = {
-  children: PropTypes.object.isRequired,
+  match: PropTypes.object,
 };
 
 export default Layout;

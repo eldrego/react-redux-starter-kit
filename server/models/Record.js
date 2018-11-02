@@ -8,6 +8,7 @@ const RecordsSchema = new mongoose.Schema({
     type: String,
   },
 });
+
 mongoose.model('Records', RecordsSchema);
 
 module.exports = mongoose.model('Records');
