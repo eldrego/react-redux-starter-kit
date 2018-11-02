@@ -1,28 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
+  browserHistory,
   Route,
   Switch
 } from 'react-router-dom';
 import Layout from './Layout';
-import Home from './pages/Home';
-import About from './pages/About';
 import NotFound from './pages/NotFound';
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <Layout>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/*" component={NotFound} />
-          </Switch>
-        </Layout>
-      </Router>
-    );
-  }
-}
+const App = props => (
+  <BrowserRouter history={browserHistory}>
+    <Switch>
+      <Route path="/" component={Layout} />
+      <Route path="/*" component={NotFound} />
+    </Switch>
+  </BrowserRouter>
+);
 
 export default App;
