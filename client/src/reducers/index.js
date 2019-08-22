@@ -1,16 +1,8 @@
-import { ADD_RECORD } from '../constants/actionTypes';
+import { combineReducers } from 'redux';
+import recordReducer from './recordReducer';
 
-const initialState = {
-  records: []
-};
+const rootReducer = combineReducers({
+  records: recordReducer,
+});
 
-const reducers = (state = initialState, action) => {
-  switch (action.type) {
-  case ADD_RECORD:
-    return { ...state, articles: [...state.record, action.payload] };
-  default:
-    return state;
-  }
-};
-
-export default reducers;
+export default rootReducer;

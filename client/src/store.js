@@ -1,24 +1,17 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-
-import thunkMiddleware from 'redux-thunk';
-import { createLogger } from 'redux-logger';
-
+import {
+  createStore, applyMiddleware, compose
+} from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import reducers from './reducers';
 
-
-const reducer = combineReducers({
-  reducers
-});
-
-/* eslint-disable no-underscore-dangle */
-const store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(
-    createLogger(),
-    thunkMiddleware
-  )
+const enhancer = compose(
+  applyMiddleware(thunk)
 );
-/* eslint-enable */
+
+const store = createStore(
+  reducers,
+  composeWithDevTools(enhancer)
+);
 
 export default store;
