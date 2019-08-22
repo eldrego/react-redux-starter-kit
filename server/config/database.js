@@ -1,9 +1,15 @@
 import mongoose from 'mongoose';
+import config from './config';
 
-require('dotenv').config();
+mongoose.Promise = global.Promise;
 
-mongoose.connect(process.env.DB,
-  { useNewUrlParser: true });
+const { db: { uri } } = config;
+
+mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
+
+mongoose.connect(uri, { useNewUrlParser: true });
+
 const database = mongoose.connection;
 
 export default database;

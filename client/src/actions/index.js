@@ -1,7 +1,18 @@
-import { ADD_RECORD } from '../constants/actionTypes';
+import { recordConstants } from '../constants';
+import api from '../utils/api';
 
-const addRecord = record => ({ type: ADD_RECORD, payload: record });
+export const fetchRecords = records => ({
+  type: recordConstants.FETCH_RECORD,
+  payload: records
+});
 
-module.exports = {
-  addRecord
+
+export const getAllRecords = () => (dispatch) => {
+  api.get('/record')
+    .then((response) => {
+      dispatch(fetchRecords(response.data.records));
+    })
+    .catch((error) => {
+      console.error(`Error : ${error}`);
+    });
 };

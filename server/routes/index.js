@@ -3,6 +3,7 @@ import records from '../controllers/records';
 
 const router = express.Router();
 
-router.get('/all', records.getAll);
+router.get('/record', records.getAll);
+router.post('/record', records.create);
 
 module.exports = router;
