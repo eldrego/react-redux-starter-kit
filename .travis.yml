@@ -6,7 +6,6 @@ services:
   - mongodb
 
 script:
-  - "npm install -g codecov"
   - "npm run client-test"
   - "npm run server-test"
 
