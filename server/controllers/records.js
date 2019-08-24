@@ -1,32 +1,47 @@
-import Record from '../models/Record';
+import { Record } from '../models/Record';
 
-exports.getAll = (req, res) => {
-  Record.find().then((items) => {
-    res.status(200).send({
-      success: true, message: 'success', records: items
-    });
-  }).catch((error) => {
-    res.status(404).send({
-      success: false, message: 'failure', error
-    });
-  });
-};
-
-exports.create = (req, res) => {
-  const newRecord = new Record(req.body);
-  newRecord.save()
-    .then((record) => {
-      res.status(201).send({
+exports.getAll = async (req, res) => {
+  try {
+    const records = await Record.find({}).lean();
+    if (records) {
+      res.status(200).json({
         success: true,
         message: 'success',
-        record,
+        records
       });
-    })
-    .catch((error) => {
-      res.status(400).send({
-        success: false,
-        message: `Failure - ${error}`,
-        error
-      });
+    }
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: 'An error occured',
+      error: `${error}`
     });
+  }
+};
+
+exports.create = async (req, res) => {
+  try {
+    const newRecord = new Record(req.body);
+    const savedRecord = await newRecord.save();
+    if (savedRecord) {
+      res.status(201).json({
+        success: true,
+        message: 'success',
+        record: savedRecord,
+      });
+    }
+  } catch (error) {
+    if (error.name === 'MongoError' && error.code === 11000) {
+      return res.status(409).json({
+        success: false,
+        message: 'An error has occurred',
+        error: `${error.message}`,
+      });
+    }
+    return res.status(500).json({
+      success: false,
+      message: 'An error has occurred',
+      error: `${error}`,
+    });
+  }
 };

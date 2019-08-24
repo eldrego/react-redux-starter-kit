@@ -1,21 +1,15 @@
-import { ADD_RECORD, FETCH_RECORD } from '../constants/actionTypes';
+import { recordConstants } from '../constants';
 
 const initialState = {
-  items: [],
-  item: {}
+  records: [],
 };
 
 const recordReducer = (state = initialState, action) => {
   switch (action.type) {
-  case ADD_RECORD:
+  case recordConstants.FETCH_RECORD:
     return {
       ...state,
-      items: [...state.items, action.payload]
-    };
-  case FETCH_RECORD:
-    return {
-      ...state,
-      items: action.payload
+      records: action.payload
     };
   default:
     return state;

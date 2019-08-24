@@ -26,8 +26,8 @@ app.use(express.static(`${__dirname}/./public`));
 
 app.use('/api/v1/', routes);
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.resolve(`${__dirname}/../client/dist/index.html`));
+app.get('/api/v1/', (req, res) => {
+  res.send({ message: 'Welcome, built with NodeJs, Express and MongoDB' });
 });
 
 app.server.listen(port);
