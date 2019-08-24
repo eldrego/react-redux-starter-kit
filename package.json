@@ -18,7 +18,7 @@
   },
   "scripts": {
     "test": "cross-env NODE_ENV=test concurrently \"npm run client-test\" \"npm run server-test\"",
-    "server-test": "npm run client-prod && nyc npm run cover",
+    "server-test": "cross-env NODE_ENV=test nyc _mocha server/test --exit",
     "client-test": "jest --coverage",
     "client-dev": "webpack --mode development --watch",
     "client-prod": "webpack --mode production",
@@ -29,7 +29,6 @@
     "server-build": "babel -d ./build ./server -s",
     "build": "npm run clean && npm run server-build",
     "clean": "rm -rf build && mkdir build",
-    "cover": "cross-env NODE_ENV=test _mocha server/test --exit",
     "open-cov": "open coverage/lcov-report/index.html"
   },
   "jest": {
