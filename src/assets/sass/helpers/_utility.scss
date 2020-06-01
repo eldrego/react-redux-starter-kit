@@ -1,0 +1,19 @@
+.filler {
+  flex-grow: 1 !important;
+}
+
+@each $name, $weight in $font-weights {
+  .font-#{$name} {
+    font-weight: $weight !important;
+  }
+}
+
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background: $color !important;
+  }
+
+  .color-#{$name} {
+    color: $color !important;
+  }
+}
