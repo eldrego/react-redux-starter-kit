@@ -1,0 +1,90 @@
+.loaders-container {
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 0;
+}
+
+.circle {
+  box-sizing: border-box;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 10px solid rgba(color(primary), 0.2);
+  border-top-color: color(primary);
+  animation: spin 1s infinite linear;
+}
+
+.circleloader {
+  position: absolute;
+  box-sizing: border-box;
+  top: 50%;
+  margin-top: -10px;
+  border-radius: 16px;
+  width: 80px;
+  height: 20px;
+  padding: 4px;
+  background: rgba(color(primary), 0.4);
+
+  &:before {
+    content: '';
+    position: absolute;
+    border-radius: 16px;
+    width: 20px;
+    height: 12px;
+    left: 0;
+    background: #fff;
+    animation: push 1s infinite linear;
+  }
+}
+
+@keyframes bouncy {
+  40% {
+    height: 40px;
+  }
+  50% {
+    transform: translate(0, 65px);
+    height: 34px;
+    border-radius: 20px;
+  }
+  65% {
+    height: 40px;
+  }
+}
+
+@keyframes push {
+  50% {
+    left: 56px;
+  }
+}
+
+@keyframes slide {
+  50% {
+    margin-top: 25px;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    border-width: 30px;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cross {
+  50% {
+    margin-left: 60px;
+  }
+}
+
+.spinner-border {
+  width: 1rem;
+  height: 1rem;
+}
