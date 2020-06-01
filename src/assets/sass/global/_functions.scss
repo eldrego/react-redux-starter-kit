@@ -1,0 +1,40 @@
+// colors
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @error 'Unknown `#{$key}` in $colors.';
+  @return null;
+}
+
+// fonts
+@function get-font-family($keyword) {
+  @if not map-has-key($font-families, $keyword) {
+    @error 'Unsupported `font-family` keyword `#{$keyword}`';
+
+    @return null;
+  }
+
+  @return map-get($font-families, $keyword);
+}
+
+@function get-font-size($keyword) {
+  @if not map-has-key($font-sizes, $keyword) {
+    @error 'Unsupported `font-size` keyword `#{$keyword}`';
+
+    @return null;
+  }
+
+  @return map-get($font-sizes, $keyword);
+}
+
+@function get-font-weight($keyword) {
+  @if not map-has-key($font-weights, $keyword) {
+    @error 'Unsupported `font-weight` keyword `#{$keyword}`';
+
+    @return null;
+  }
+
+  @return map-get($font-weights, $keyword);
+}

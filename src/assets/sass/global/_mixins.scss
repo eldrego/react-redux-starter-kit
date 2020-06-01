@@ -1,0 +1,44 @@
+@mixin font-family($keyword) {
+  font-family: get-font-family($keyword);
+}
+
+@mixin font-size($keyword) {
+  font-size: get-font-size($keyword);
+}
+
+@mixin font-weight($keyword) {
+  font-weight: get-font-weight($keyword);
+}
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint == smallest) {
+    @media only screen and (max-width: 20em) {
+      @content;
+    } // 320px
+  }
+  @if ($breakpoint == smaller) {
+    @media only screen and (max-width: 31.25em) {
+      @content;
+    } // 500px
+  }
+  @if ($breakpoint == small) {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+  @if ($breakpoint == medium) {
+    @media only screen and (max-width: 48em) {
+      @content;
+    } // 768px
+  }
+  @if ($breakpoint == large) {
+    @media only screen and (max-width: 61.938em) {
+      @content;
+    } // 990px
+  }
+  @if ($breakpoint == largest) {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } // 1200px
+  }
+}

@@ -1,0 +1,17 @@
+.footer {
+  padding: 1rem;
+  background: color(dark);
+
+  .copyright {
+    @include font-size(small);
+    color: color(white);
+
+    &__link {
+      color: color(white);
+    }
+  }
+
+  &__title {
+    color: color(white);
+  }
+}
