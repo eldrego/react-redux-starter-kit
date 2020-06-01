@@ -1,68 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Redux Starter Kit
 
-## Available Scripts
+<!-- [![Build Status](https://travis-ci.org/eldrego/react-redux-starter-kit.svg?branch=master)](https://travis-ci.org/eldrego/react-redux-starter-kit) [![Coverage Status](https://coveralls.io/repos/github/eldrego/react-redux-starter-kit/badge.svg?branch=master)](https://coveralls.io/github/eldrego/react-redux-starter-kit?branch=master) [![Maintainability](https://api.codeclimate.com/v1/badges/8ab5785ac91be8d1bf0d/maintainability)](https://codeclimate.com/github/eldrego/react-redux-starter-kit/maintainability) -->
 
-In the project directory, you can run:
+[![Hound](https://img.shields.io/badge/Protected_by-Hound-a873d1.svg)](https://travis-ci.org/eldrego/react-redux-starter-kit)
 
-### `yarn start`
+This is repository is created to help bootstrap a React-Redux application.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Requirements
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- node `8.9.0`
+- npm `^6.0.1`
 
-### `yarn test`
+## Installation
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create a new project based on `react-redux-starter-kit` by doing the following:
 
-### `yarn build`
+```bash
+$ git clone https://github.com/eldrego/react-redux-starter-kit.git <my-project-name>
+$ cd <my-project-name>
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create your .env file and populate the relevant values based on the sample file .env-sample
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Install dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+$ npm install
+$ npm run start      # Compiles and launches application
+```
 
-### `yarn eject`
+If everything works, you should get a message indicating so. In development Application will be served on port 8080
+Open the web browser to http://localhost:3000/login
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Project Structure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The project structure presented in this starter kit is outlined below. This structure is only meant to serve as a guide.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+├── public                # Transpiled react source code
+└──src                    # React-redux related files
+   ├── __tests__          # Unit tests
+   ├── assets             # Assests - Images, stylesheets and
+   │   ├── fonts          # Custom fonts for the application
+   │   ├── images         # Images
+   │   └── sass           # CSS files
+   ├── components         # Collections of reducers/constants/actions
+   ├── layouts            # Layouts for auth pages and other pages
+   ├── pages              # Collections of landing pages for navigation items
+   ├── redux              # Collections of reducers/constants/actions
+   │   ├── actions        # Actions
+   │   ├── reducers       # Reducers
+   │   ├── constants.js   # Constants file
+   │   └── store.js       # Redux store instance
+   ├── routes             # Route declaration for the application  - private and public routes
+   └── utils              # Utitily functions used in the application
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contributing
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+I am more than happy to accept contributions to the project. Contributions can be in the form of feedback, bug reports or even better - pull requests :)
