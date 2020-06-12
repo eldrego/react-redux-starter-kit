@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from '../enzyme';
-import Header from '../src/components/common/Header';
+import Header from '../components/common/Header';
 
 describe('App', () => {
   it('renders without crashing', () => {
