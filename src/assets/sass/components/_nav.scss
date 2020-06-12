@@ -1,0 +1,16 @@
+.nav {
+  &-item {
+    margin: 0 0.8rem;
+    color: color(white);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-link {
+    &.active {
+      color: color(white) !important;
+    }
+  }
+}

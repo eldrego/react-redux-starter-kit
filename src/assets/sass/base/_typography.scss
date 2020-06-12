@@ -1,0 +1,22 @@
+.heading {
+  @media only screen and (max-width: 37.5em) {
+    font-size: 1.125rem;
+  }
+  margin-bottom: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.paragraph {
+  @media only screen and (max-width: 37.5em) {
+    font-size: 0.875rem;
+  }
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #7a7a7a;
+}
