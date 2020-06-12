@@ -1,39 +1,11 @@
 {
-  "name": "trial",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "nyc": {
-    "require": [
-      "@babel/register"
-    ],
-    "reporter": [
-      "text-summary",
-      "html",
-      "lcov",
-      "text"
-    ],
-    "sourceMap": false,
-    "instrument": false
-  },
-  "scripts": {
-    "test": "cross-env NODE_ENV=test jest --coverage",
-    "start": "webpack-dev-server --open --mode development --watch",
-    "prod": "webpack --mode production",
-    "build": "cross-env NODE_ENV=production && npm run prod",
-    "open-cov": "open coverage/lcov-report/index.html"
-  },
-  "jest": {
-    "verbose": true,
-    "collectCoverage": true,
-    "rootDir": "client",
-    "moduleNameMapper": {
-      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
-    }
-  },
-  "author": "",
-  "license": "ISC",
+  "name": "new",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "classnames": "^2.2.6",
@@ -48,6 +20,24 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development --watch",
+    "prod": "webpack --mode production",
+    "build": "cross-env NODE_ENV=production && npm run prod",
+    "open-cov": "open coverage/lcov-report/index.html"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
